@@ -1,24 +1,32 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Section, SectionHeading } from "@/components/common/Section";
 import { Reveal } from "@/components/common/Reveal";
 import { Icon } from "@/components/common/Icon";
 import { PageHero, CTASection } from "@/components/common/PageHero";
+import { ProductComparison } from "@/components/products/ProductComparison";
 import { products } from "@/data/products";
 
 export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
-      { title: "Products — The BlitzElement AI Platform" },
+      {
+        title:
+          "Products — WhatsApp Automation, AI CRM & All In One | BlitzElement",
+      },
       {
         name: "description",
         content:
-          "Eleven connected products: Blitz CRM, Inbox, AI Chatbot, Voice, Automation, Analytics, Booking, Marketing, Commerce, Docs and Workspace.",
+          "Explore WhatsApp Automation, AI Powered CRM and All In One: three BlitzElement products for smarter customer communication and operations.",
       },
-      { property: "og:title", content: "Products — The BlitzElement AI Platform" },
+      {
+        property: "og:title",
+        content: "Three AI products for smarter business | BlitzElement",
+      },
       {
         property: "og:description",
-        content: "Explore the eleven products that make up the BlitzElement AI business platform.",
+        content:
+          "Start with WhatsApp automation or AI-powered CRM, then bring everything together with All In One.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/products" },
@@ -28,65 +36,123 @@ export const Route = createFileRoute("/products/")({
   component: ProductsPage,
 });
 
-const groups = ["Engage", "Operate", "Grow"] as const;
-
-const groupCopy: Record<(typeof groups)[number], string> = {
-  Engage: "Meet customers on every channel with agents that actually resolve things.",
-  Operate: "Run the work behind the conversation — bookings, documents, workflows and reporting.",
-  Grow: "Turn relationships and data into pipeline, revenue and retention.",
-};
-
 function ProductsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Platform"
-        title={<>Eleven products, one <span className="text-gradient">connected system</span></>}
-        description="Each product stands on its own. Together they share one customer record, one permission model and one bill — which is why teams that start with one rarely stop there."
+        eyebrow="Products"
+        title={
+          <>
+            Three AI products. One path to{" "}
+            <span className="text-gradient">smarter business.</span>
+          </>
+        }
+        description="Start with focused WhatsApp automation or an AI-powered CRM. Move to All In One when you are ready to connect communication, customer management and advanced workflows."
       />
 
-      {groups.map((group) => (
-        <Section key={group}>
-          <SectionHeading align="left" eyebrow={group} title={groupCopy[group]} />
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {products
-              .filter((p) => p.category === group)
-              .map((product, i) => (
-                <Reveal key={product.slug} delay={(i % 3) * 0.06} className="h-full">
-                  <Link
-                    to="/products/$slug"
-                    params={{ slug: product.slug }}
-                    className="surface-card group flex h-full flex-col p-6"
-                  >
-                    <span className="grid h-11 w-11 place-items-center rounded-xl border border-border bg-surface text-secondary transition-colors group-hover:border-secondary/60">
-                      <Icon name={product.icon} />
-                    </span>
-                    <h3 className="mt-5 text-lg font-semibold">{product.name}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{product.tagline}</p>
-                    <ul className="mt-5 flex flex-wrap gap-2">
-                      {product.metrics.slice(0, 2).map((m) => (
-                        <li
-                          key={m.label}
-                          className="rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground"
-                        >
-                          <span className="font-semibold text-foreground">{m.value}</span> {m.label}
-                        </li>
-                      ))}
-                    </ul>
-                    <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-secondary">
-                      Explore {product.name}
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
-                    </span>
-                  </Link>
-                </Reveal>
-              ))}
+      <Section>
+        <SectionHeading
+          eyebrow="Choose your starting point"
+          title="Built around the customer operation you need today"
+          description="Each product has a clear job. All In One brings both focused products together on one connected BlitzElement foundation."
+        />
+        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {products.map((product, index) => (
+            <Reveal key={product.slug} delay={index * 0.08} className="h-full">
+              <Link
+                to="/products/$slug"
+                params={{ slug: product.slug }}
+                className="surface-card group relative flex h-full flex-col p-7"
+              >
+                {product.badge && (
+                  <span className="absolute top-5 right-5 rounded-full bg-foreground px-3 py-1 text-[10px] font-semibold tracking-wide text-background uppercase">
+                    {product.badge}
+                  </span>
+                )}
+                <span className="grid h-12 w-12 place-items-center rounded-2xl border border-primary/20 bg-accent text-secondary">
+                  <Icon name={product.icon} className="h-5 w-5" />
+                </span>
+                <p className="mt-6 text-xs font-semibold tracking-wide text-secondary uppercase">
+                  {product.label}
+                </p>
+                <h2 className="mt-2 text-2xl font-semibold">{product.name}</h2>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {product.description}
+                </p>
+                <p className="mt-5 text-sm font-medium">{product.audience}</p>
+                <ul className="mt-6 flex-1 space-y-2.5">
+                  {product.highlights.slice(0, 5).map((highlight) => (
+                    <li
+                      key={highlight}
+                      className="flex gap-2.5 text-sm text-muted-foreground"
+                    >
+                      <Check
+                        className="mt-0.5 h-4 w-4 shrink-0 text-success"
+                        aria-hidden
+                      />
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+                <span className="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-secondary">
+                  Learn more
+                  <ArrowRight
+                    className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                    aria-hidden
+                  />
+                </span>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      <Section tone="dark">
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <SectionHeading
+            align="left"
+            eyebrow="Grow without starting over"
+            title="Start with what you need. Upgrade when your business grows."
+            description="Begin with WhatsApp Automation or AI Powered CRM. Move to All In One when you need both, while keeping the same BlitzElement business identity and customer context."
+          />
+          <div className="grid gap-4 sm:grid-cols-3">
+            {["WhatsApp Automation", "AI Powered CRM", "All In One"].map(
+              (step, index) => (
+                <div key={step} className="surface-card p-5">
+                  <span className="font-display text-xs text-secondary">
+                    0{index + 1}
+                  </span>
+                  <p className="mt-2 text-sm font-semibold">{step}</p>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                    {index < 2
+                      ? "A focused product that can be your starting point."
+                      : "The complete platform when communication and CRM need to work together."}
+                  </p>
+                </div>
+              ),
+            )}
           </div>
-        </Section>
-      ))}
+        </div>
+      </Section>
+
+      <Section id="compare" tone="soft">
+        <SectionHeading
+          eyebrow="Compare products"
+          title="Choose the right level of customer operations"
+          description="The comparison scrolls horizontally on smaller screens so every product remains easy to evaluate."
+        />
+        <div className="mt-12">
+          <ProductComparison />
+        </div>
+      </Section>
 
       <CTASection
-        title="Not sure which product to start with?"
-        description="Tell us the problem you are trying to solve and we will show you the shortest path to a measurable result."
+        title="Not sure which product fits first?"
+        primaryLabel="Explore AI Powered CRM"
+        primaryTo="/products/ai-powered-crm"
+        description="Explore each product in detail, then talk with our team when you are ready to plan the right starting point."
+        secondaryLabel="Explore WhatsApp Automation"
+        secondaryTo="/products/whatsapp-automation"
       />
     </>
   );

@@ -23,10 +23,10 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Meridian relied on OTAs for 71% of bookings and lost margin on every reservation. Guest requests arrived across six channels with no shared history, and front-desk teams could not keep up during check-in peaks.",
     approach: [
-      "Unified email, WhatsApp, Instagram and phone into Blitz Inbox with per-property routing.",
-      "Deployed Blitz Voice to answer overflow calls, quote availability and confirm bookings in four languages.",
-      "Trained Blitz AI Chatbot on rate plans, amenities and local recommendations for the direct booking flow.",
-      "Connected reservation data to Blitz Analytics for live channel-mix and RevPAR reporting.",
+      "Unified customer conversations in an All In One workspace with per-property routing.",
+      "Deployed AI-assisted overflow handling to quote availability and confirm bookings in four languages.",
+      "Trained WhatsApp Automation on rate plans, amenities and local recommendations for the direct booking flow.",
+      "Connected reservation data to All In One analytics for live channel-mix and RevPAR reporting.",
     ],
     results: [
       { label: "Direct bookings", value: "+27%" },
@@ -52,7 +52,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Reception teams handled 9,000 calls a week. Roughly one in five appointments was missed, and empty slots were rarely refilled because staff had no time to work the waitlist.",
     approach: [
-      "Rolled out Blitz Booking with multi-clinic, multi-clinician availability rules.",
+      "Rolled out appointment workflows in AI Powered CRM with multi-clinic, multi-clinician availability rules.",
       "Automated reminder sequences over SMS and WhatsApp tuned per appointment type.",
       "Built AI waitlist recovery that offers cancelled slots to matched patients within 60 seconds.",
       "Configured regional data residency, consent capture and full audit logging.",
@@ -81,7 +81,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Portal leads landed in a shared mailbox and were often picked up hours later. Agents worked from personal spreadsheets, and management had no reliable view of conversion by source.",
     approach: [
-      "Implemented Blitz CRM with a property-matching data model and territory-based routing.",
+      "Implemented AI Powered CRM with a property-matching data model and territory-based routing.",
       "Added an AI qualification agent that captures budget, timeline and financing status on first contact.",
       "Automated viewing scheduling with calendar sync across every agent.",
       "Built vendor reporting that generates weekly activity summaries automatically.",
@@ -110,10 +110,10 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Peak season historically required 40 seasonal agents. Response times still stretched past 30 hours, and returns processing created a backlog that lasted into January.",
     approach: [
-      "Deployed Blitz AI Chatbot trained on order policies, product data and returns rules.",
+      "Deployed WhatsApp Automation trained on order policies, product data and returns rules.",
       "Automated order status, tracking and returns initiation end to end.",
-      "Routed only exceptions to human agents through Blitz Inbox with full context.",
-      "Instrumented cost per conversation and deflection rate in Blitz Analytics.",
+      "Routed only exceptions to human agents through the All In One inbox with full context.",
+      "Instrumented cost per conversation and deflection rate in All In One analytics.",
     ],
     results: [
       { label: "Tickets deflected", value: "78%" },
@@ -142,7 +142,7 @@ export const caseStudies: CaseStudy[] = [
       "Built an AI intake workflow that extracts specifications from PDFs, drawings and spreadsheets.",
       "Automated pricing against material costs, machine capacity and historical margin.",
       "Added a human approval checkpoint for quotes above a configurable value threshold.",
-      "Surfaced win rate by product family and customer in Blitz Analytics.",
+      "Surfaced win rate by product family and customer in All In One analytics.",
     ],
     results: [
       { label: "Quote-to-order cycle", value: "-36%" },
@@ -168,10 +168,10 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Applicants asked the same 200 questions in 11 languages. The admissions team answered during office hours only, and drop-off between enquiry and application was 58%.",
     approach: [
-      "Consolidated policies and course data into Blitz Knowledge as a single source of truth.",
+      "Consolidated policies and course data into the All In One knowledge base.",
       "Launched a multilingual admissions agent across web, WhatsApp and the student portal.",
       "Automated application status updates and document reminders.",
-      "Tracked enquiry-to-enrolment conversion by market in Blitz Analytics.",
+      "Tracked enquiry-to-enrolment conversion by market in All In One analytics.",
     ],
     results: [
       { label: "Questions automated", value: "68%" },

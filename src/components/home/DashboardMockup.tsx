@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Activity, Bot, CheckCircle2, Inbox, MessageSquare, PhoneCall, TrendingUp } from "lucide-react";
+import { Activity, Bot, CheckCircle2, Inbox, MessageSquare, TrendingUp, UserPlus } from "lucide-react";
 
 const bars = [38, 52, 44, 68, 59, 82, 74, 91, 86, 97];
 
@@ -18,7 +18,7 @@ export function DashboardMockup() {
           <span className="h-2.5 w-2.5 rounded-full bg-chart-5/80" />
           <span className="h-2.5 w-2.5 rounded-full bg-success/70" />
           <span className="ml-3 truncate rounded-md border border-border px-2 py-0.5 text-[10px] text-muted-foreground">
-            app.blitzelement.com/workspace/overview
+            Product preview - illustrative data
           </span>
         </div>
 
@@ -26,7 +26,7 @@ export function DashboardMockup() {
           <div className="space-y-3">
             <div className="rounded-2xl border border-border bg-surface/60 p-4">
               <div className="flex items-center justify-between">
-                <p className="text-xs text-muted-foreground">Automated resolutions today</p>
+                <p className="text-xs text-muted-foreground">AI responses today</p>
                 <span className="flex items-center gap-1 text-[10px] font-medium text-success">
                   <TrendingUp className="h-3 w-3" aria-hidden /> +12.4%
                 </span>
@@ -47,8 +47,8 @@ export function DashboardMockup() {
 
             <div className="grid grid-cols-2 gap-3">
               {[
-                { icon: Inbox, label: "Open threads", value: "36" },
-                { icon: PhoneCall, label: "Calls handled", value: "214" },
+                { icon: Inbox, label: "Conversations", value: "36" },
+                { icon: UserPlus, label: "New leads", value: "214" },
               ].map((m) => (
                 <div key={m.label} className="rounded-2xl border border-border bg-surface/60 p-3">
                   <m.icon className="h-4 w-4 text-secondary" aria-hidden />
@@ -65,26 +65,26 @@ export function DashboardMockup() {
                 <span className="grid h-7 w-7 place-items-center rounded-lg bg-[image:var(--gradient-brand)]">
                   <Bot className="h-3.5 w-3.5 text-primary-foreground" aria-hidden />
                 </span>
-                <p className="text-xs font-medium">Blitz Agent · live conversation</p>
+                <p className="text-xs font-medium">WhatsApp assistant · example conversation</p>
                 <span className="ml-auto flex items-center gap-1 text-[10px] text-success">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-success" /> Active
                 </span>
               </div>
               <div className="mt-3 space-y-2">
-                <Bubble side="left" text="Hi — can I move my booking to Friday morning?" />
-                <Bubble side="right" text="Of course. I have 9:15 and 11:00 free on Friday. Which suits you?" />
-                <Bubble side="left" text="9:15 please." />
-                <Bubble side="right" text="Done — confirmation sent to your WhatsApp. Anything else?" />
+                <Bubble side="left" text="Hi — which service is right for a ten-person sales team?" />
+                <Bubble side="right" text="I can help with that. Are you mainly looking to manage leads, automate WhatsApp, or both?" />
+                <Bubble side="left" text="Both. We also need human takeover." />
+                <Bubble side="right" text="All In One is designed for that. I can capture your requirements for the team." />
               </div>
             </div>
 
             <div className="rounded-2xl border border-border bg-surface/60 p-4">
-              <p className="text-xs font-medium text-muted-foreground">Workflow run · Booking confirmation</p>
+              <p className="text-xs font-medium text-muted-foreground">Customer activity · Lead capture</p>
               <ul className="mt-3 space-y-2">
                 {[
-                  { icon: MessageSquare, label: "Intent classified: reschedule", done: true },
-                  { icon: Activity, label: "Availability checked in Blitz Booking", done: true },
-                  { icon: CheckCircle2, label: "CRM updated & reminder scheduled", done: true },
+                  { icon: MessageSquare, label: "Inquiry identified: product fit", done: true },
+                  { icon: Activity, label: "Business knowledge response prepared", done: true },
+                  { icon: CheckCircle2, label: "Lead context ready for human follow-up", done: true },
                 ].map((step, i) => (
                   <motion.li
                     key={step.label}

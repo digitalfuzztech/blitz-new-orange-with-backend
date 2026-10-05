@@ -64,7 +64,7 @@ export const services: Service[] = [
     name: "CRM Development",
     icon: "Users",
     overview:
-      "Implementation, migration and deep customisation of Blitz CRM around how your revenue team actually sells.",
+      "Implementation, migration and deep customisation of AI Powered CRM around how your revenue team actually sells.",
     benefits: [
       "Clean migration with no lost history",
       "Pipeline stages matched to your sales motion",

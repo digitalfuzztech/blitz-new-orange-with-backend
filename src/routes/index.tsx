@@ -4,7 +4,6 @@ import {
   ArrowRight,
   Check,
   ChevronRight,
-  Play,
   ShieldCheck,
   Star,
   Sparkles,
@@ -17,7 +16,7 @@ import { DashboardMockup } from "@/components/home/DashboardMockup";
 import { products } from "@/data/products";
 import { industries } from "@/data/industries";
 import { caseStudies } from "@/data/case-studies";
-import { clientLogos, faqs, pricingTiers, stats, testimonials } from "@/data/site";
+import { clientLogos, faqs, stats, testimonials } from "@/data/site";
 import { ComingSoonBadge, SmartLink } from "@/components/common/SmartLink";
 import {
   Accordion,
@@ -29,17 +28,17 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Blitz Elements — AI Business Infrastructure for Modern Companies" },
+      { title: "Blitz Elements — WhatsApp Automation, AI CRM & Customer Operations" },
       {
         name: "description",
         content:
-          "AI CRM, omnichannel inbox, chat and voice agents, automation and analytics in one platform. 2,400+ businesses automate 74% of customer conversations with BlitzElement.",
+          "Automate WhatsApp conversations, manage customers and leads with AI Powered CRM, or bring both together with BlitzElement All In One.",
       },
-      { property: "og:title", content: "Blitz Elements — AI Business Infrastructure" },
+      { property: "og:title", content: "Blitz Elements — Three AI products for customer operations" },
       {
         property: "og:description",
         content:
-          "One platform for AI customer engagement, revenue and operations. Deploy in days, measure in weeks.",
+          "Explore WhatsApp Automation, AI Powered CRM and the complete All In One customer operations platform.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -50,27 +49,28 @@ export const Route = createFileRoute("/")({
 });
 
 const whyPoints = [
-  { icon: "Rocket", title: "Live in days, not quarters", description: "Pre-built agents, connectors and workflows mean your first automation ships in the first week." },
-  { icon: "ShieldCheck", title: "Enterprise trust by default", description: "SOC 2 Type II, GDPR, regional data residency, SSO and full audit logging on every plan tier." },
-  { icon: "Layers", title: "One platform, not eleven tools", description: "Inbox, CRM, booking, marketing, analytics and voice share one data model and one contract." },
-  { icon: "LineChart", title: "Value you can measure", description: "Every workflow reports hours saved, cost per outcome and revenue influenced — audited monthly." },
+  { icon: "Fingerprint", title: "One business identity", description: "Begin with a focused product and keep one BlitzElement foundation as your customer operation grows." },
+  { icon: "BrainCircuit", title: "AI inside customer operations", description: "Communication, customer context and suggested actions are designed to work as one operating flow." },
+  { icon: "UserRoundCheck", title: "Human and AI collaboration", description: "Give AI the repeatable work while people retain visibility, judgment and a clear takeover path." },
+  { icon: "Layers", title: "Start small and upgrade", description: "Choose WhatsApp Automation or AI Powered CRM first, then move to All In One when you need both." },
 ];
 
 const featureGrid = [
-  { icon: "Bot", title: "Grounded AI agents", description: "Answer from your approved knowledge with citations, guardrails and clean human handover." },
-  { icon: "MessagesSquare", title: "Omnichannel by default", description: "WhatsApp, Instagram, Messenger, email, SMS, live chat and voice in one prioritised queue." },
-  { icon: "Workflow", title: "Automation with judgment", description: "AI steps classify, extract and decide; humans approve only the genuine exceptions." },
-  { icon: "Database", title: "One customer record", description: "Every conversation, booking, deal and invoice attached to a single, permissioned timeline." },
-  { icon: "Gauge", title: "Real-time intelligence", description: "Ask questions in plain language and get charted, sourced answers in seconds." },
-  { icon: "Plug", title: "300+ integrations", description: "Salesforce, HubSpot, Stripe, Shopify, Xero, Microsoft 365 and any REST endpoint." },
+  { icon: "MessageCircle", title: "AI communication", description: "Use approved business knowledge to support customer conversations with a clear human takeover path." },
+  { icon: "BrainCircuit", title: "Customer intelligence", description: "Turn customer activity into summaries, useful context and suggested next steps." },
+  { icon: "Database", title: "Unified customer data", description: "Keep contacts, leads, notes and relationship history organized around one customer record." },
+  { icon: "Workflow", title: "Automated workflows", description: "Connect repeatable customer tasks while preserving clear points for human judgment." },
+  { icon: "UsersRound", title: "Team collaboration", description: "Share ownership, conversation context, tasks and follow-up across the people serving each customer." },
+  { icon: "Gauge", title: "Actionable analytics", description: "Understand conversation activity, pipeline movement and customer operations from one business view." },
 ];
 
 const workflowSteps = [
-  { title: "Capture", description: "A customer messages, calls or submits a form on any channel.", icon: "Inbox" },
-  { title: "Understand", description: "Intent, sentiment, language and account context resolved in under a second.", icon: "BrainCircuit" },
-  { title: "Act", description: "The agent answers, books, updates records or triggers a workflow with tools.", icon: "Zap" },
-  { title: "Escalate", description: "Edge cases route to the right human with a full summary attached.", icon: "UserRoundCheck" },
-  { title: "Learn", description: "Every outcome scored, gaps flagged, knowledge updated automatically.", icon: "RefreshCw" },
+  { title: "Connect", description: "A customer contacts your business through WhatsApp.", icon: "MessageCircle" },
+  { title: "Respond", description: "AI handles the first response using approved business knowledge.", icon: "Bot" },
+  { title: "Capture", description: "Useful customer and lead details stay attached to the inquiry.", icon: "Inbox" },
+  { title: "Take over", description: "Your team steps in when a conversation needs human judgment.", icon: "UserRoundCheck" },
+  { title: "Track", description: "CRM stages, notes and follow-up keep the relationship moving.", icon: "UsersRound" },
+  { title: "Improve", description: "AI-assisted insights help the team plan the next best action.", icon: "BrainCircuit" },
 ];
 
 function HomePage() {
@@ -104,7 +104,7 @@ function Hero() {
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-accent/80 px-3.5 py-1.5 text-xs font-medium text-secondary backdrop-blur">
               <Sparkles className="h-3.5 w-3.5 text-secondary" aria-hidden />
-              Blitz Voice 2.0 · sub-500ms AI receptionists
+              WhatsApp Automation · AI Powered CRM · All In One
               <ChevronRight className="h-3.5 w-3.5" aria-hidden />
             </span>
           </motion.div>
@@ -124,9 +124,8 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="mt-6 max-w-2xl text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg"
           >
-            One platform to engage customers, automate operations and grow revenue. BlitzElement runs the
-            conversations, workflows and intelligence behind 2,400+ businesses — from five-person teams to global
-            enterprises.
+            Automate customer conversations, manage every lead and run your customer operation with AI. Start with
+            the product you need today, then grow into one connected BlitzElement workspace.
           </motion.p>
 
           <motion.div
@@ -135,20 +134,19 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.25 }}
             className="mt-9 flex flex-col gap-3 sm:flex-row"
           >
-            <SmartLink
-              to="/book-demo"
-              showBadge={false}
-              className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[image:var(--gradient-brand)] px-7 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-elevated)] transition-transform hover:-translate-y-0.5 hover:scale-[1.02]"
-            >
-              Book a demo
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
-            </SmartLink>
             <Link
               to="/products"
+              className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[image:var(--gradient-brand)] px-7 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-elevated)] transition-transform hover:-translate-y-0.5 hover:scale-[1.02]"
+            >
+              Explore products
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
+            </Link>
+            <Link
+              to="/products/$slug"
+              params={{ slug: "all-in-one" }}
               className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-border bg-surface/50 px-7 text-sm font-semibold backdrop-blur transition-colors hover:border-secondary/60 hover:bg-surface"
             >
-              <Play className="h-4 w-4 text-secondary" aria-hidden />
-              Explore the platform
+              Explore All In One
             </Link>
           </motion.div>
 
@@ -158,7 +156,7 @@ function Hero() {
             transition={{ delay: 0.4 }}
             className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground"
           >
-            {["No credit card required", "14-day full-feature trial", "SOC 2 Type II certified"].map((item) => (
+            {["WhatsApp communication", "AI-powered CRM", "One upgrade path"].map((item) => (
               <li key={item} className="flex items-center gap-1.5">
                 <Check className="h-3.5 w-3.5 text-success" aria-hidden />
                 {item}
@@ -221,8 +219,8 @@ function Features() {
     <Section tone="soft">
       <SectionHeading
         eyebrow="Platform"
-        title="Everything a modern company needs to run on AI"
-        description="Not a chatbot bolted onto old software. A connected system where conversations, records, workflows and analytics share the same foundation."
+          title="The foundations of an intelligent customer operation"
+          description="Communication, customer data, workflows and team context designed around three clear BlitzElement products."
       />
       <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {featureGrid.map((feature, i) => (
@@ -249,9 +247,9 @@ function WorkflowSection() {
         <SectionHeading
           eyebrow="How it works"
           title="The AI workflow behind every customer interaction"
-          description="Five stages, running continuously, with a person involved exactly where judgment is required."
+          description="A customer operations journey that keeps AI assistance and human judgment connected."
         />
-        <ol className="mt-14 grid gap-4 lg:grid-cols-5">
+        <ol className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           {workflowSteps.map((step, i) => (
             <Reveal key={step.title} delay={i * 0.1} className="h-full">
               <li className="surface-card relative h-full p-5">
@@ -321,27 +319,42 @@ function EcosystemSection() {
     <Section tone="soft">
       <SectionHeading
         eyebrow="Product ecosystem"
-        title="Eleven products. One platform contract."
-        description="Start with the product that solves today's problem. Add the rest when you are ready — the data and permissions already line up."
+        title="Start with what you need. Upgrade when your business grows."
+        description="Choose focused WhatsApp automation, an AI-powered CRM or the complete All In One platform. Your path stays on one BlitzElement business foundation."
       />
-      <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {products.map((product, i) => (
           <Reveal key={product.slug} delay={(i % 3) * 0.06} className="h-full">
             <Link
               to="/products/$slug"
               params={{ slug: product.slug }}
-              className="surface-card group flex h-full flex-col p-6"
+              className="surface-card group relative flex h-full flex-col p-7"
             >
+              {product.badge && (
+                <span className="mb-4 self-start rounded-full bg-foreground px-3 py-1 text-[10px] font-semibold tracking-wide text-background uppercase">
+                  {product.badge}
+                </span>
+              )}
               <div className="flex items-center gap-3">
-                <span className="grid h-10 w-10 place-items-center rounded-xl border border-border bg-surface text-secondary transition-colors group-hover:border-secondary/60">
+                <span className="grid h-11 w-11 place-items-center rounded-xl border border-primary/20 bg-accent text-secondary">
                   <Icon name={product.icon} />
                 </span>
                 <span className="rounded-full border border-border px-2.5 py-0.5 text-[10px] tracking-wide text-muted-foreground uppercase">
-                  {product.category}
+                  {product.label}
                 </span>
               </div>
               <h3 className="mt-5 text-lg font-semibold">{product.name}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{product.tagline}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{product.description}</p>
+              <p className="mt-5 text-xs font-semibold tracking-wide text-secondary uppercase">Best for</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{product.audience}</p>
+              <ul className="mt-5 flex-1 space-y-2">
+                {product.highlights.slice(0, 4).map((highlight) => (
+                  <li key={highlight} className="flex gap-2 text-sm text-muted-foreground">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-hidden />
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
               <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-secondary">
                 Learn more
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
@@ -397,16 +410,17 @@ function AutomationShowcase() {
               Watch a single enquiry run the whole business
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              A WhatsApp message arrives at 11:42pm. Nobody is working. Eleven seconds later the customer has an
-              answer, a confirmed appointment and a deposit receipt — and your team wakes up to a clean record.
+              A customer starts on WhatsApp. AI handles the first response, captures the enquiry and keeps the
+              conversation ready for a person to take over. In All In One, that context can continue into CRM and
+              follow-up workflows.
             </p>
             <ul className="mt-6 space-y-3">
               {[
-                "Intent understood and account matched instantly",
-                "Availability checked across three locations",
-                "Deposit collected and receipt issued",
-                "CRM, calendar and reminder sequence updated",
-                "Manager notified only if something needs approval",
+                "AI responds from approved business knowledge",
+                "Lead details stay with the conversation",
+                "A team member can take over with full context",
+                "Customer history connects to the CRM record",
+                "Follow-up and insights support the next action",
               ].map((item) => (
                 <li key={item} className="flex gap-3 text-sm text-muted-foreground">
                   <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-hidden />
@@ -425,11 +439,11 @@ function AutomationShowcase() {
 
           <ol className="relative space-y-3 border-l border-border pl-6">
             {[
-              { time: "23:42:01", label: "Message received on WhatsApp", detail: "Customer asks to book a table for six on Saturday." },
-              { time: "23:42:02", label: "Intent + account resolved", detail: "Returning guest matched, preferences loaded from Blitz CRM." },
-              { time: "23:42:05", label: "Availability checked", detail: "Blitz Booking finds 19:30 across two locations." },
-              { time: "23:42:09", label: "Booking confirmed", detail: "Deposit taken via Stripe, confirmation sent in guest's language." },
-              { time: "23:42:12", label: "Systems updated", detail: "CRM note, reminder sequence and staffing forecast all written." },
+              { time: "Step 01", label: "Message received on WhatsApp", detail: "A customer asks a product or service question." },
+              { time: "Step 02", label: "AI drafts the first response", detail: "The answer is grounded in approved business knowledge." },
+              { time: "Step 03", label: "Inquiry details captured", detail: "Customer details and intent remain attached to the conversation." },
+              { time: "Step 04", label: "Human takes over when needed", detail: "The team continues with the full history and AI-generated context." },
+              { time: "Step 05", label: "Customer relationship continues", detail: "All In One keeps conversation and CRM follow-up connected." },
             ].map((step, i) => (
               <Reveal key={step.time} delay={i * 0.1} className="h-full">
                 <li className="relative rounded-2xl border border-border bg-surface/60 p-4">
@@ -539,54 +553,51 @@ function PricingPreview() {
     <Section>
       <SectionHeading
         eyebrow="Pricing"
-        title="Transparent plans that scale with usage, not licences"
-        description="One workspace price covers every channel. Upgrade when the value is proven, not before."
+        title="Choose the product that matches your next step"
+        description="Final public prices are still being defined. Explore the product scope now and contact the BlitzElement team when you are ready to plan a rollout."
       />
       <div className="mt-14 grid gap-5 lg:grid-cols-3">
-        {pricingTiers.map((tier, i) => (
-          <Reveal key={tier.name} delay={i * 0.08} className="h-full">
+        {products.map((product, i) => (
+          <Reveal key={product.slug} delay={i * 0.08} className="h-full">
             <div
               className={`surface-card relative flex h-full flex-col p-7 ${
-                tier.highlight ? "border-primary/60 shadow-[var(--shadow-elevated)]" : ""
+                product.badge ? "border-primary/60 shadow-[var(--shadow-elevated)]" : ""
               }`}
             >
-              {tier.highlight && (
+              {product.badge && (
                 <span className="absolute -top-3 left-7 rounded-full bg-[image:var(--gradient-brand)] px-3 py-1 text-[10px] font-semibold tracking-wide text-primary-foreground uppercase">
-                  Most popular
+                  {product.badge}
                 </span>
               )}
-              <h3 className="text-lg font-semibold">{tier.name}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{tier.description}</p>
-              <p className="font-display mt-6 text-4xl font-semibold">
-                {tier.monthly === 0 ? "Custom" : `$${tier.monthly}`}
-                {tier.monthly !== 0 && <span className="text-sm font-normal text-muted-foreground">/mo</span>}
-              </p>
+              <h3 className="text-lg font-semibold">{product.name}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{product.pricingDescription}</p>
+              <p className="font-display mt-6 text-3xl font-semibold">{product.pricingLabel}</p>
               <ul className="mt-6 flex-1 space-y-2.5">
-                {tier.features.slice(0, 5).map((f) => (
-                  <li key={f} className="flex gap-2.5 text-sm text-muted-foreground">
+                {product.pricingFeatures.map((feature) => (
+                  <li key={feature} className="flex gap-2.5 text-sm text-muted-foreground">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-hidden />
-                    {f}
+                    {feature}
                   </li>
                 ))}
               </ul>
-              <SmartLink
-                to="/pricing"
-                showBadge={false}
+              <Link
+                to="/products/$slug"
+                params={{ slug: product.slug }}
                 className={`mt-7 inline-flex h-11 items-center justify-center rounded-full text-sm font-semibold transition-transform hover:-translate-y-0.5 hover:scale-[1.02] ${
-                  tier.highlight
+                  product.badge
                     ? "bg-[image:var(--gradient-brand)] text-primary-foreground"
                     : "border border-border hover:bg-surface"
                 }`}
               >
-                {tier.cta}
-              </SmartLink>
+                Explore {product.name}
+              </Link>
             </div>
           </Reveal>
         ))}
       </div>
       <p className="mt-8 flex items-center justify-center gap-2 text-xs text-muted-foreground">
         <ShieldCheck className="h-4 w-4 text-success" aria-hidden />
-        All plans include SOC 2 Type II controls, encryption at rest and in transit, and no model training on your data.
+        Product pages describe the planned commercial scope. Purchasing and subscriptions are not active yet.
       </p>
     </Section>
   );

@@ -2,7 +2,7 @@ export const site = {
   name: "BlitzElement",
   tagline: "AI Business Infrastructure for Modern Companies",
   description:
-    "BlitzElement builds AI business infrastructure — CRM, omnichannel inbox, chat and voice agents, automation and analytics — for companies that want to grow without adding headcount.",
+    "BlitzElement brings AI-powered WhatsApp communication, customer relationship management and connected customer operations into three focused products.",
   email: {
     sales: "sales@blitzelement.com",
     support: "support@blitzelement.com",
@@ -70,81 +70,13 @@ export const faqs = [
   {
     question: "What does support look like after launch?",
     answer:
-      "Every plan includes documentation, in-app support and a monthly product review. Growth and Enterprise customers get a named implementation lead, a shared Slack channel and defined response SLAs down to 15 minutes for critical incidents.",
+      "Support and implementation scope will be matched to the product and rollout your business chooses. Final service levels will be confirmed before launch.",
   },
   {
     question: "How is pricing structured?",
     answer:
-      "Plans are priced per workspace with usage-based allowances for AI conversations, voice minutes and automation runs. There are no per-channel licences — one plan covers WhatsApp, email, chat, social and voice.",
+      "WhatsApp Automation, AI Powered CRM and All In One are priced according to business requirements and rollout scope. Final public pricing has not yet been published.",
   },
-];
-
-export const pricingTiers = [
-  {
-    name: "Starter",
-    description: "For small teams putting their first AI workflows into production.",
-    monthly: 149,
-    yearly: 119,
-    highlight: false,
-    cta: "Start free trial",
-    features: [
-      "Up to 5 team members",
-      "Blitz Inbox with 3 channels",
-      "AI chatbot with 2,000 conversations/mo",
-      "50 automation workflows",
-      "Standard analytics dashboards",
-      "Email support, next business day",
-    ],
-  },
-  {
-    name: "Growth",
-    description: "For scaling companies running revenue and support on one platform.",
-    monthly: 549,
-    yearly: 439,
-    highlight: true,
-    cta: "Book a demo",
-    features: [
-      "Up to 40 team members",
-      "All channels including WhatsApp & voice",
-      "AI chatbot with 20,000 conversations/mo",
-      "Unlimited automation workflows",
-      "Blitz CRM, Booking, Marketing & Analytics",
-      "Named implementation lead",
-      "Shared Slack channel, 4h response SLA",
-    ],
-  },
-  {
-    name: "Enterprise",
-    description: "For organisations with security, scale and compliance requirements.",
-    monthly: 0,
-    yearly: 0,
-    highlight: false,
-    cta: "Talk to sales",
-    features: [
-      "Unlimited team members",
-      "Custom AI models and private deployment",
-      "Data residency in your chosen region",
-      "SSO/SAML, SCIM and audit exports",
-      "Dedicated success and solutions team",
-      "15-minute critical response SLA",
-      "Custom contracts, DPA and security review",
-    ],
-  },
-];
-
-export const comparisonRows = [
-  { feature: "Team members", starter: "5", growth: "40", enterprise: "Unlimited" },
-  { feature: "Unified inbox channels", starter: "3", growth: "All 8", enterprise: "All 8 + custom" },
-  { feature: "AI conversations / month", starter: "2,000", growth: "20,000", enterprise: "Custom" },
-  { feature: "AI voice minutes", starter: "—", growth: "3,000", enterprise: "Custom" },
-  { feature: "Automation workflows", starter: "50", growth: "Unlimited", enterprise: "Unlimited" },
-  { feature: "Blitz CRM", starter: "—", growth: "Included", enterprise: "Included" },
-  { feature: "Analytics & BI", starter: "Standard", growth: "Advanced", enterprise: "Warehouse-native" },
-  { feature: "Custom AI model tuning", starter: "—", growth: "—", enterprise: "Included" },
-  { feature: "SSO / SAML / SCIM", starter: "—", growth: "SSO", enterprise: "Full" },
-  { feature: "Data residency choice", starter: "—", growth: "EU / US", enterprise: "Any region" },
-  { feature: "Support response SLA", starter: "Next day", growth: "4 hours", enterprise: "15 minutes" },
-  { feature: "Implementation support", starter: "Self-serve", growth: "Named lead", enterprise: "Dedicated team" },
 ];
 
 export const testimonials = [
@@ -219,11 +151,11 @@ export const values = [
 
 export const timeline = [
   { year: "2019", title: "Founded in San Francisco", description: "Three engineers and a designer start building automation tooling for local service businesses." },
-  { year: "2021", title: "Blitz Inbox launches", description: "The unified omnichannel inbox ships and reaches 200 paying customers in its first year." },
+  { year: "2021", title: "Unified customer inbox launches", description: "The customer communication workspace ships and reaches 200 paying customers in its first year." },
   { year: "2022", title: "London office opens", description: "European expansion begins with EU data residency and GDPR-first architecture." },
   { year: "2023", title: "AI agents go production", description: "Grounded retrieval, guardrails and evaluation tooling turn chatbots into dependable coworkers." },
   { year: "2024", title: "SOC 2 Type II certified", description: "Enterprise security programme completed; first 1,000-seat deployment goes live." },
-  { year: "2025", title: "Blitz Voice released", description: "Sub-500ms voice agents launch across 30 countries with real-time CRM write-back." },
+  { year: "2025", title: "AI voice capability released", description: "Sub-500ms voice agents launch across 30 countries with real-time CRM write-back." },
   { year: "2026", title: "2,400 businesses, four continents", description: "The platform now runs revenue, support and operations for teams from 5 to 5,000 people." },
 ];
 

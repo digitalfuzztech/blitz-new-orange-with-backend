@@ -33,7 +33,7 @@ export const solutions: Solution[] = [
       { label: "Speed to first reply", value: "<60s" },
       { label: "Cost per lead", value: "-31%" },
     ],
-    products: ["blitz-ai-chatbot", "blitz-crm", "blitz-marketing"],
+    products: ["whatsapp-automation", "ai-powered-crm", "all-in-one"],
   },
   {
     slug: "improve-customer-support",
@@ -57,7 +57,7 @@ export const solutions: Solution[] = [
       { label: "CSAT improvement", value: "+22pts" },
       { label: "Handle time", value: "-38%" },
     ],
-    products: ["blitz-inbox", "blitz-ai-chatbot", "blitz-knowledge"],
+    products: ["whatsapp-automation", "all-in-one"],
   },
   {
     slug: "automate-operations",
@@ -81,7 +81,7 @@ export const solutions: Solution[] = [
       { label: "Process error rate", value: "-86%" },
       { label: "Run success rate", value: "99.7%" },
     ],
-    products: ["blitz-automation", "blitz-projects", "blitz-analytics"],
+    products: ["all-in-one"],
   },
   {
     slug: "increase-sales",
@@ -105,7 +105,7 @@ export const solutions: Solution[] = [
       { label: "Sales cycle", value: "-38%" },
       { label: "Selling time per rep", value: "+6h/wk" },
     ],
-    products: ["blitz-crm", "blitz-marketing", "blitz-analytics"],
+    products: ["ai-powered-crm", "all-in-one"],
   },
   {
     slug: "reduce-costs",
@@ -129,7 +129,7 @@ export const solutions: Solution[] = [
       { label: "Cost per conversation", value: "-58%" },
       { label: "Payback period", value: "4.2 months" },
     ],
-    products: ["blitz-inbox", "blitz-automation", "blitz-analytics"],
+    products: ["whatsapp-automation", "all-in-one"],
   },
   {
     slug: "ai-transformation",
@@ -153,7 +153,7 @@ export const solutions: Solution[] = [
       { label: "Time to first value", value: "6 weeks" },
       { label: "Documented ROI", value: "5.4x" },
     ],
-    products: ["blitz-automation", "blitz-knowledge", "blitz-analytics"],
+    products: ["all-in-one"],
   },
   {
     slug: "digital-modernization",
@@ -177,7 +177,7 @@ export const solutions: Solution[] = [
       { label: "Maintenance cost", value: "-45%" },
       { label: "Release frequency", value: "12x" },
     ],
-    products: ["blitz-automation", "blitz-projects", "blitz-crm"],
+    products: ["ai-powered-crm", "all-in-one"],
   },
 ];
 

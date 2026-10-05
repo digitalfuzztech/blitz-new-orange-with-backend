@@ -21,14 +21,14 @@ export function AnnouncementBar() {
             aria-hidden
           />
           <span className="truncate">
-            Blitz Voice 2.0 is live — sub-500ms AI receptionists in 30 countries.
+            New: AI-powered WhatsApp automation for modern businesses.
           </span>
           <Link
             to="/products/$slug"
-            params={{ slug: "blitz-voice" }}
+            params={{ slug: "whatsapp-automation" }}
             className="hidden shrink-0 items-center gap-1 font-semibold text-primary underline underline-offset-4 hover:text-white sm:inline-flex"
           >
-            See what's new
+            Explore WhatsApp Automation
             <ArrowRight className="h-3.5 w-3.5" aria-hidden />
           </Link>
         </div>

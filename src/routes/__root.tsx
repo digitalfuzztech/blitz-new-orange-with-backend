@@ -92,7 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Blitz Elements builds AI business infrastructure: CRM, omnichannel inbox, AI agents, automation and analytics for modern companies.",
+          "Blitz Elements offers WhatsApp Automation, AI Powered CRM and All In One for intelligent customer communication and operations.",
       },
       { name: "author", content: "BlitzElements" },
       { name: "theme-color", content: "#FAFAF9" },

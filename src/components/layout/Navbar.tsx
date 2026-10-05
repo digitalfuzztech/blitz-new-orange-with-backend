@@ -213,14 +213,17 @@ export function Navbar({ onOpenSearch }: { onOpenSearch: () => void }) {
                 </div>
                 <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
                   <p className="text-xs text-muted-foreground">
-                    Not sure where to start? Our team will map the highest-value use case for you.
+                    {menu.label === "Products"
+                      ? "Start focused, then move to All In One when your business is ready."
+                      : "Not sure where to start? Our team will map the highest-value use case for you."}
                   </p>
                   <SmartLink
-                    to="/book-demo"
+                    to={menu.label === "Products" ? "/products" : "/book-demo"}
                     showBadge={false}
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-secondary hover:underline"
                   >
-                    Book a demo <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                    {menu.label === "Products" ? "Explore all products" : "Book a demo"}
+                    <ArrowRight className="h-3.5 w-3.5" aria-hidden />
                   </SmartLink>
                 </div>
               </div>
