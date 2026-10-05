@@ -9,13 +9,13 @@ export function DashboardMockup() {
       initial={{ opacity: 0, y: 40, rotateX: 8 }}
       animate={{ opacity: 1, y: 0, rotateX: 0 }}
       transition={{ duration: 1, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-      className="relative mx-auto w-full max-w-5xl"
+      className="theme-dark relative mx-auto w-full max-w-5xl"
     >
       <div className="absolute -inset-6 rounded-[2.5rem] bg-[image:var(--gradient-brand)] opacity-20 blur-3xl" aria-hidden />
-      <div className="glass relative overflow-hidden rounded-3xl p-3 shadow-[var(--shadow-elevated)] sm:p-4">
+      <div className="glass relative overflow-hidden rounded-3xl bg-background p-3 text-foreground shadow-[var(--shadow-soft)] sm:p-4">
         <div className="mb-3 flex items-center gap-2 px-2">
           <span className="h-2.5 w-2.5 rounded-full bg-destructive/70" />
-          <span className="h-2.5 w-2.5 rounded-full bg-chart-5/70" />
+          <span className="h-2.5 w-2.5 rounded-full bg-chart-5/80" />
           <span className="h-2.5 w-2.5 rounded-full bg-success/70" />
           <span className="ml-3 truncate rounded-md border border-border px-2 py-0.5 text-[10px] text-muted-foreground">
             app.blitzelement.com/workspace/overview
@@ -36,7 +36,7 @@ export function DashboardMockup() {
                 {bars.map((h, i) => (
                   <motion.span
                     key={i}
-                    className="flex-1 rounded-t-sm bg-[image:var(--gradient-brand)]"
+                    className="flex-1 rounded-t-sm bg-brand-orange"
                     initial={{ height: 0 }}
                     animate={{ height: `${h}%` }}
                     transition={{ duration: 0.8, delay: 0.5 + i * 0.06, ease: "easeOut" }}

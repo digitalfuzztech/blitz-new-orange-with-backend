@@ -36,6 +36,7 @@ export function SmartLink({
   className,
   activeProps,
   onMouseEnter,
+  onClick,
   badgeClassName,
   showBadge = true,
   "aria-label": ariaLabel,
@@ -46,6 +47,7 @@ export function SmartLink({
   className?: string | undefined;
   activeProps?: { className?: string } | undefined;
   onMouseEnter?: (() => void) | undefined;
+  onClick?: (() => void) | undefined;
   badgeClassName?: string | undefined;
   showBadge?: boolean | undefined;
   "aria-label"?: string | undefined;
@@ -55,6 +57,7 @@ export function SmartLink({
       <span
         aria-disabled="true"
         onMouseEnter={onMouseEnter}
+        onClick={onClick}
         className={cn("cursor-not-allowed opacity-60", className)}
       >
         {children}
@@ -70,6 +73,7 @@ export function SmartLink({
       className={className}
       {...(activeProps ? { activeProps } : {})}
       {...(onMouseEnter ? { onMouseEnter } : {})}
+      {...(onClick ? { onClick } : {})}
       {...(ariaLabel ? { "aria-label": ariaLabel } : {})}
     >
       {children}

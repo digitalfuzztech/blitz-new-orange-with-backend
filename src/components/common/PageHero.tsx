@@ -18,12 +18,17 @@ export function PageHero({
   className?: string;
 }) {
   return (
-    <header className={cn("relative overflow-hidden border-b border-border", className)}>
-      <div className="aurora opacity-45" aria-hidden />
+    <header
+      className={cn(
+        "relative overflow-hidden border-b border-border bg-background",
+        className,
+      )}
+    >
+      <div className="aurora opacity-70" aria-hidden />
       <div className="absolute inset-0 grid-bg" aria-hidden />
       <Section className="relative py-20 md:py-28">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3.5 py-1.5 text-xs font-medium tracking-wide text-muted-foreground uppercase backdrop-blur">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-accent/80 px-3.5 py-1.5 text-xs font-medium tracking-wide text-secondary uppercase backdrop-blur">
             <Sparkles className="h-3.5 w-3.5 text-secondary" aria-hidden />
             {eyebrow}
           </span>
@@ -54,9 +59,9 @@ export function CTASection({
   secondaryTo?: string;
 }) {
   return (
-    <Section>
-      <div className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-16 text-center sm:px-12">
-        <div className="aurora opacity-60" aria-hidden />
+    <Section tone="dark">
+      <div className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-16 text-center shadow-[var(--shadow-soft)] sm:px-12">
+        <div className="aurora opacity-55" aria-hidden />
         <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-6">
           <h2 className="text-3xl font-semibold text-balance sm:text-4xl md:text-5xl">{title}</h2>
           <p className="text-base text-pretty text-muted-foreground sm:text-lg">{description}</p>
@@ -72,7 +77,7 @@ export function CTASection({
             <SmartLink
               to={secondaryTo}
               showBadge={false}
-              className="inline-flex h-12 items-center justify-center rounded-full border border-border bg-surface/60 px-7 text-sm font-semibold text-foreground transition-colors hover:border-secondary/60 hover:bg-surface"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-border bg-white px-7 text-sm font-semibold text-black transition-colors hover:border-primary hover:bg-accent"
             >
               {secondaryLabel}
             </SmartLink>

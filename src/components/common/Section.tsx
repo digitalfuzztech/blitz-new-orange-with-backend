@@ -6,14 +6,25 @@ export function Section({
   className,
   id,
   as: Tag = "section",
+  tone = "default",
 }: {
   children: ReactNode;
   className?: string;
   id?: string;
   as?: "section" | "div" | "footer";
+  tone?: "default" | "soft" | "dark";
 }) {
   return (
-    <Tag id={id} className={cn("relative px-5 py-20 sm:px-8 md:py-28", className)}>
+    <Tag
+      id={id}
+      className={cn(
+        "relative px-5 py-20 sm:px-8 md:py-28",
+        tone === "soft" && "border-y border-border bg-surface/70",
+        tone === "dark" &&
+          "theme-dark border-y border-border bg-background text-foreground",
+        className,
+      )}
+    >
       <div className="mx-auto w-full max-w-7xl">{children}</div>
     </Tag>
   );

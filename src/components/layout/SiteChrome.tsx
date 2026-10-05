@@ -45,7 +45,7 @@ export function ScrollToTop() {
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       aria-label="Scroll back to top"
       className={cn(
-        "fixed right-6 bottom-24 z-50 grid h-11 w-11 place-items-center rounded-full border border-border bg-surface/80 text-foreground backdrop-blur transition-all duration-300 hover:border-secondary/60",
+        "fixed right-6 bottom-24 z-50 grid h-11 w-11 place-items-center rounded-full border border-border bg-card/90 text-foreground shadow-[var(--shadow-soft)] backdrop-blur transition-all duration-300 hover:border-primary/60 hover:text-secondary",
         visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0",
       )}
     >
@@ -61,15 +61,24 @@ export function ChatWidget() {
     <>
       {open && (
         <div className="animate-in fade-in slide-in-from-bottom-4 fixed right-6 bottom-24 z-50 w-[min(22rem,calc(100vw-3rem))] overflow-hidden rounded-3xl border border-border bg-popover shadow-[var(--shadow-soft)] duration-200">
-          <div className="flex items-center gap-3 border-b border-border bg-[image:var(--gradient-brand)] px-4 py-3.5">
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-white/20">
+          <div className="theme-dark flex items-center gap-3 border-b border-border bg-background px-4 py-3.5">
+            <span className="grid h-9 w-9 place-items-center rounded-full bg-primary">
               <MessageCircle className="h-4.5 w-4.5 text-primary-foreground" aria-hidden />
             </span>
             <div className="min-w-0 flex-1">
-              <p className="text-sm font-semibold text-primary-foreground">Blitz Assistant</p>
-              <p className="text-xs text-primary-foreground/80">Typically replies instantly</p>
+              <p className="text-sm font-semibold text-foreground">
+                Blitz Assistant
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Typically replies instantly
+              </p>
             </div>
-            <button type="button" onClick={() => setOpen(false)} aria-label="Close chat" className="text-primary-foreground/80 hover:text-primary-foreground">
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              aria-label="Close chat"
+              className="text-muted-foreground hover:text-white"
+            >
               <X className="h-4 w-4" aria-hidden />
             </button>
           </div>

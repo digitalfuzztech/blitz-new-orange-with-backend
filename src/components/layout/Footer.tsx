@@ -14,12 +14,12 @@ export function Footer() {
   const [subscribed, setSubscribed] = useState(false);
 
   return (
-    <footer className="relative overflow-hidden border-t border-border bg-card">
-      <div className="aurora opacity-25" aria-hidden />
+    <footer className="theme-dark relative overflow-hidden border-t border-border bg-background text-foreground">
+      <div className="aurora opacity-35" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_2fr]">
           <div className="space-y-6">
-            <Logo />
+            <Logo variant="dark" />
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
               {site.tagline}. We build the AI systems that run customer engagement, revenue and operations for
               2,400+ companies worldwide.
@@ -108,7 +108,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-6 rounded-3xl border border-border bg-surface/50 p-6 sm:p-8 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+        <div className="mt-14 grid gap-6 rounded-3xl border border-border bg-surface/70 p-6 sm:p-8 lg:grid-cols-[1.2fr_1fr] lg:items-center">
           <div>
             <h3 className="text-xl font-semibold">The BlitzElement Brief</h3>
             <p className="mt-2 text-sm text-muted-foreground">
@@ -133,7 +133,7 @@ export function Footer() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@company.com"
-              className="h-12 flex-1 rounded-full border border-input bg-background px-5 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-secondary/60"
+              className="h-12 flex-1 rounded-full border border-input bg-background px-5 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/70"
             />
             <button
               type="submit"

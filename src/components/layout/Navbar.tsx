@@ -95,7 +95,9 @@ export function Navbar({ onOpenSearch }: { onOpenSearch: () => void }) {
     <div
       className={cn(
         "sticky top-0 z-40 transition-colors duration-300",
-        scrolled ? "glass border-b border-border" : "border-b border-transparent bg-background/40 backdrop-blur-sm",
+        scrolled
+          ? "glass border-b border-border"
+          : "border-b border-border/70 bg-background/90 backdrop-blur-sm",
       )}
       onMouseLeave={() => setOpenMenu(null)}
     >
@@ -115,12 +117,17 @@ export function Navbar({ onOpenSearch }: { onOpenSearch: () => void }) {
                   aria-expanded={openMenu === menu.label}
                   className={cn(
                     "flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
-                    openMenu === menu.label ? "bg-surface text-foreground" : "text-muted-foreground hover:text-foreground",
+                    openMenu === menu.label
+                      ? "bg-accent text-secondary"
+                      : "text-muted-foreground hover:bg-surface hover:text-foreground",
                   )}
                 >
                   {menu.label}
                   <ChevronDown
-                    className={cn("h-3.5 w-3.5 transition-transform", openMenu === menu.label && "rotate-180")}
+                    className={cn(
+                      "h-3.5 w-3.5 transition-transform",
+                      openMenu === menu.label && "rotate-180",
+                    )}
                     aria-hidden
                   />
                 </button>
@@ -128,8 +135,8 @@ export function Navbar({ onOpenSearch }: { onOpenSearch: () => void }) {
                 <SmartLink
                   to={menu.to!}
                   onMouseEnter={() => setOpenMenu(null)}
-                  className="inline-flex items-center rounded-full px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                  activeProps={{ className: "text-foreground" }}
+                  className="inline-flex items-center rounded-full px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-surface hover:text-foreground"
+                  activeProps={{ className: "bg-accent text-secondary" }}
                   badgeClassName="ml-1.5 px-1.5 py-0 text-[9px] leading-[1.4]"
                 >
                   {menu.label}
@@ -144,7 +151,7 @@ export function Navbar({ onOpenSearch }: { onOpenSearch: () => void }) {
             type="button"
             onClick={onOpenSearch}
             aria-label="Search the site"
-            className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:border-secondary/50 hover:text-foreground"
+            className="grid h-9 w-9 place-items-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:border-primary/50 hover:bg-accent hover:text-secondary"
           >
             <Search className="h-4 w-4" aria-hidden />
           </button>
@@ -177,7 +184,7 @@ export function Navbar({ onOpenSearch }: { onOpenSearch: () => void }) {
             onMouseEnter={() => setOpenMenu(menu.label)}
           >
             <div className="mx-auto max-w-7xl px-5 pb-6 sm:px-8">
-              <div className="animate-in fade-in slide-in-from-top-2 overflow-hidden rounded-3xl border border-border bg-popover/95 p-6 shadow-[var(--shadow-soft)] backdrop-blur-xl duration-200">
+              <div className="animate-in fade-in slide-in-from-top-2 overflow-hidden rounded-3xl border border-border bg-popover/98 p-6 shadow-[var(--shadow-soft)] backdrop-blur-xl duration-200">
                 <div
                   className={cn(
                     "grid gap-1.5",
@@ -190,9 +197,9 @@ export function Navbar({ onOpenSearch }: { onOpenSearch: () => void }) {
                       to={item.to}
                       params={item.params}
                       showBadge={false}
-                      className="group flex gap-3 rounded-2xl p-3 transition-colors hover:bg-surface"
+                      className="group flex gap-3 rounded-2xl p-3 transition-colors hover:bg-accent"
                     >
-                      <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-border bg-surface text-secondary transition-colors group-hover:border-secondary/50">
+                      <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-border bg-surface text-secondary transition-colors group-hover:border-primary/40 group-hover:bg-white">
                         <Icon name={item.icon} className="h-4.5 w-4.5" />
                       </span>
                       <span className="min-w-0">
@@ -241,8 +248,10 @@ export function Navbar({ onOpenSearch }: { onOpenSearch: () => void }) {
                     <Logo />
 
                     <button
-                        onClick={() => setMobileOpen(false)}
-                        className="grid h-10 w-10 place-items-center rounded-full border border-border"
+                      type="button"
+                      onClick={() => setMobileOpen(false)}
+                      aria-label="Close menu"
+                      className="grid h-10 w-10 place-items-center rounded-full border border-border bg-card text-foreground"
                     >
                       <X className="h-5 w-5" />
                     </button>
@@ -254,55 +263,57 @@ export function Navbar({ onOpenSearch }: { onOpenSearch: () => void }) {
                         menu.items ? (
                             <div key={menu.label} className="border-b border-border/60">
                               <button
-                                  type="button"
-                                  onClick={() =>
-                                      setMobileSection(
-                                          mobileSection === menu.label ? null : menu.label
-                                      )
-                                  }
-                                  className="flex w-full items-center justify-between py-3.5 text-left text-base font-medium"
+                                type="button"
+                                onClick={() =>
+                                  setMobileSection(
+                                    mobileSection === menu.label
+                                      ? null
+                                      : menu.label,
+                                  )
+                                }
+                                className="flex w-full items-center justify-between py-3.5 text-left text-base font-medium"
                               >
                                 {menu.label}
 
                                 <ChevronDown
-                                    className={cn(
-                                        "h-4 w-4 transition-transform",
-                                        mobileSection === menu.label && "rotate-180"
-                                    )}
+                                  className={cn(
+                                    "h-4 w-4 transition-transform",
+                                    mobileSection === menu.label && "rotate-180",
+                                  )}
                                 />
                               </button>
 
                               {mobileSection === menu.label && (
-                                  <ul className="pb-3">
-                                    {menu.items.map((item) => (
-                                        <li key={item.label}>
-                                          <SmartLink
-                                              to={item.to}
-                                              params={item.params}
-                                              onClick={() => setMobileOpen(false)}
-                                              className="flex items-center gap-3 rounded-xl px-2 py-2.5 text-sm text-muted-foreground hover:bg-surface"
-                                          >
-                                            <Icon
-                                                name={item.icon}
-                                                className="h-4 w-4 shrink-0 text-secondary"
-                                            />
-                                            {item.label}
-                                          </SmartLink>
-                                        </li>
-                                    ))}
-                                  </ul>
+                                <ul className="pb-3">
+                                  {menu.items.map((item) => (
+                                    <li key={item.label}>
+                                      <SmartLink
+                                        to={item.to}
+                                        params={item.params}
+                                        onClick={() => setMobileOpen(false)}
+                                        className="flex items-center gap-3 rounded-xl px-2 py-2.5 text-sm text-muted-foreground hover:bg-accent hover:text-foreground"
+                                      >
+                                          <Icon
+                                            name={item.icon}
+                                            className="h-4 w-4 shrink-0 text-secondary"
+                                          />
+                                        {item.label}
+                                      </SmartLink>
+                                    </li>
+                                  ))}
+                                </ul>
                               )}
                             </div>
-                        ) : (
+                          ) : (
                             <SmartLink
-                                key={menu.label}
-                                to={menu.to!}
-                                onClick={() => setMobileOpen(false)}
-                                className="flex items-center border-b border-border/60 py-3.5 text-base font-medium"
+                              key={menu.label}
+                              to={menu.to!}
+                              onClick={() => setMobileOpen(false)}
+                              className="flex items-center border-b border-border/60 py-3.5 text-base font-medium"
                             >
                               {menu.label}
                             </SmartLink>
-                        )
+                          )
                     )}
 
                     <div className="flex flex-col gap-3 pt-6">

@@ -96,13 +96,13 @@ function HomePage() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-border">
-      <div className="aurora opacity-70" aria-hidden />
+    <section className="relative overflow-hidden border-b border-border bg-background">
+      <div className="aurora opacity-90" aria-hidden />
       <div className="absolute inset-0 grid-bg" aria-hidden />
       <Section className="relative pt-16 pb-20 md:pt-24 md:pb-28">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3.5 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur">
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-accent/80 px-3.5 py-1.5 text-xs font-medium text-secondary backdrop-blur">
               <Sparkles className="h-3.5 w-3.5 text-secondary" aria-hidden />
               Blitz Voice 2.0 · sub-500ms AI receptionists
               <ChevronRight className="h-3.5 w-3.5" aria-hidden />
@@ -177,7 +177,7 @@ function Hero() {
 
 function TrustBar() {
   return (
-    <div className="border-b border-border py-10">
+    <div className="border-b border-border bg-card py-10">
       <p className="text-center text-xs tracking-widest text-muted-foreground uppercase">
         Trusted by teams in hospitality, healthcare, real estate, retail and finance
       </p>
@@ -218,7 +218,7 @@ function StatsBand() {
 
 function Features() {
   return (
-    <Section>
+    <Section tone="soft">
       <SectionHeading
         eyebrow="Platform"
         title="Everything a modern company needs to run on AI"
@@ -243,7 +243,7 @@ function Features() {
 
 function WorkflowSection() {
   return (
-    <Section className="relative overflow-hidden">
+    <Section tone="dark" className="relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-60" aria-hidden />
       <div className="relative">
         <SectionHeading
@@ -318,7 +318,7 @@ function WhySection() {
 
 function EcosystemSection() {
   return (
-    <Section>
+    <Section tone="soft">
       <SectionHeading
         eyebrow="Product ecosystem"
         title="Eleven products. One platform contract."
@@ -387,8 +387,8 @@ function IndustriesSection() {
 
 function AutomationShowcase() {
   return (
-    <Section>
-      <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-6 sm:p-10">
+    <Section tone="dark">
+      <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] sm:p-10">
         <div className="aurora opacity-30" aria-hidden />
         <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
@@ -486,7 +486,7 @@ function TestimonialsSection() {
 
 function CaseStudiesPreview() {
   return (
-    <Section>
+    <Section tone="soft">
       <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <SectionHeading
           align="left"
@@ -594,7 +594,7 @@ function PricingPreview() {
 
 function FAQSection() {
   return (
-    <Section>
+    <Section tone="soft">
       <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <SectionHeading
           align="left"
