@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BookDemoRouteImport } from './routes/book-demo'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndustriesIndexRouteImport } from './routes/industries.index'
 import { Route as IndustriesSlugRouteImport } from './routes/industries.$slug'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
@@ -22,6 +24,16 @@ import { Route as SolutionsSlugRouteImport } from './routes/solutions.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookDemoRoute = BookDemoRouteImport.update({
+  id: '/book-demo',
+  path: '/book-demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndustriesIndexRoute = IndustriesIndexRouteImport.update({
@@ -67,6 +79,8 @@ const SolutionsSlugRoute = SolutionsSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/book-demo': typeof BookDemoRoute
+  '/contact': typeof ContactRoute
   '/industries/$slug': typeof IndustriesSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -78,6 +92,8 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/book-demo': typeof BookDemoRoute
+  '/contact': typeof ContactRoute
   '/industries/$slug': typeof IndustriesSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -90,6 +106,8 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/book-demo': typeof BookDemoRoute
+  '/contact': typeof ContactRoute
   '/industries/$slug': typeof IndustriesSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -103,6 +121,8 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/book-demo'
+    | '/contact'
     | '/industries/$slug'
     | '/products/$slug'
     | '/services/$slug'
@@ -114,6 +134,8 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/book-demo'
+    | '/contact'
     | '/industries/$slug'
     | '/products/$slug'
     | '/services/$slug'
@@ -125,6 +147,8 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/book-demo'
+    | '/contact'
     | '/industries/$slug'
     | '/products/$slug'
     | '/services/$slug'
@@ -137,6 +161,8 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BookDemoRoute: typeof BookDemoRoute
+  ContactRoute: typeof ContactRoute
   IndustriesSlugRoute: typeof IndustriesSlugRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
@@ -154,6 +180,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book-demo': {
+      id: '/book-demo'
+      path: '/book-demo'
+      fullPath: '/book-demo'
+      preLoaderRoute: typeof BookDemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/industries/': {
@@ -217,6 +257,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BookDemoRoute: BookDemoRoute,
+  ContactRoute: ContactRoute,
   IndustriesSlugRoute: IndustriesSlugRoute,
   ProductsSlugRoute: ProductsSlugRoute,
   ServicesSlugRoute: ServicesSlugRoute,
